@@ -248,19 +248,19 @@ const Header = () => {
               >
                 <div className="navbar-nav mr-auto py-0">
                   <NavLink
-                    to="index.html"
+                    to="/"
                     className="nav-item nav-link"
                   >
                     Home
                   </NavLink>
                   <NavLink
-                    to="shop.html"
+                    to="shop"
                     className="nav-item nav-link"
                   >
                     Shop
                   </NavLink>
                   <NavLink
-                    to="detail.html"
+                    to="detail"
                     className="nav-item nav-link"
                   >
                     Shop Detail
@@ -289,7 +289,7 @@ const Header = () => {
                     </div>
                   </div>
                   <NavLink
-                    to="contact.html"
+                    to="contact"
                     className="nav-item nav-link active"
                   >
                     Contact
