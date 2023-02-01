@@ -290,7 +290,7 @@ const Header = () => {
                   </div>
                   <NavLink
                     to="contact"
-                    className="nav-item nav-link active"
+                    className="nav-item nav-link "
                   >
                     Contact
                   </NavLink>
