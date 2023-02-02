@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 const Checkout = () => {
   return (
     <>
       <div className="container-fluid bg-secondary mb-5">
         <div
           className="d-flex flex-column align-items-center justify-content-center"
-          style="min-height: 300px"
+          style={{ minHeight: "300px" }}
         >
           <h1 className="font-weight-semi-bold text-uppercase mb-3">
             Checkout

@@ -275,13 +275,13 @@ const Header = () => {
                     </NavLink>
                     <div className="dropdown-menu rounded-0 m-0">
                       <NavLink
-                        to="cart.html"
+                        to="shopcard"
                         className="dropdown-item"
                       >
                         Shopping Cart
                       </NavLink>
                       <NavLink
-                        to="checkout.html"
+                        to="checkout"
                         className="dropdown-item"
                       >
                         Checkout

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Cards from "./Cards";
+import MyCarousel from "./MyCarousel";
 
 const DetailPage = () => {
   return (
@@ -35,28 +36,28 @@ const DetailPage = () => {
                   <img
                     className="w-100 h-100"
                     src="img/product-1.jpg"
-                    alt="Image"
+                    alt=""
                   />
                 </div>
                 <div className="carousel-item">
                   <img
                     className="w-100 h-100"
                     src="img/product-2.jpg"
-                    alt="Image"
+                    alt=""
                   />
                 </div>
                 <div className="carousel-item">
                   <img
                     className="w-100 h-100"
                     src="img/product-3.jpg"
-                    alt="Image"
+                    alt=""
                   />
                 </div>
                 <div className="carousel-item">
                   <img
                     className="w-100 h-100"
                     src="img/product-4.jpg"
-                    alt="Image"
+                    alt=""
                   />
                 </div>
               </div>
@@ -429,7 +430,7 @@ const DetailPage = () => {
                     <div className="media mb-4">
                       <img
                         src="img/user.jpg"
-                        alt="Image"
+                        alt=""
                         className="img-fluid mr-3 mt-1"
                         style={{ width: "45px" }}
                       />
@@ -519,7 +520,7 @@ const DetailPage = () => {
             <span className="px-2">You May Also Like</span>
           </h2>
         </div>
-        <Cards />
+        <MyCarousel card={<Cards />} />
       </div>
     </>
   );
