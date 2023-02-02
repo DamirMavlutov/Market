@@ -67,7 +67,7 @@ const Header = () => {
         <div className="row align-items-center py-3 px-xl-5">
           <div className="col-lg-3 d-none d-lg-block">
             <NavLink
-              to="#"
+              to="/"
               className="text-decoration-none"
             >
               <h1 className="m-0 display-5 font-weight-semi-bold">
