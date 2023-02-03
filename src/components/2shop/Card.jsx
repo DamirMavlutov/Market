@@ -9,7 +9,7 @@ const Card = (props) => {
           <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
             <img
               className="img-fluid w-100"
-              src={photos}
+              src={photos[0]}
               alt=""
             />
           </div>
