@@ -1,6 +1,4 @@
 import { Link } from "react-router-dom";
-import Cards from "./Cards";
-import MyCarousel from "./MyCarousel";
 
 const DetailPage = () => {
   return (
@@ -520,7 +518,6 @@ const DetailPage = () => {
             <span className="px-2">You May Also Like</span>
           </h2>
         </div>
-        <MyCarousel card={<Cards />} />
       </div>
     </>
   );
