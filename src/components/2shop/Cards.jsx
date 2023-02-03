@@ -8,7 +8,6 @@ const Cards = () => {
       .then((response) => response.json())
       .then((json) => setItems(json));
   }, []);
-  console.log(items);
 
   return (
     <>
