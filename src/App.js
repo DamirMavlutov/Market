@@ -8,6 +8,7 @@ import PagesPage from "./components/4pages/PagesPage";
 import ContactPage from "./components/5contact/ContactPage";
 import Checkout from "./components/4pages/Checkout";
 import ShoppingCard from "./components/4pages/ShoppingCard";
+import Card from "./components/2shop/Card";
 import Layout from "./layouts/Layout";
 
 function App() {
@@ -29,7 +30,12 @@ function App() {
           <Route
             path="detail"
             element={<DetailPage />}
-          />
+          >
+            <Route
+              index
+              element={<Card />}
+            />
+          </Route>
 
           <Route
             path="pages"
