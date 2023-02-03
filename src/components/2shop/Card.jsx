@@ -1,4 +1,6 @@
 import { NavLink } from "react-router-dom";
+const DEFAULT_PHOTO =
+  "https://images.unsplash.com/photo-1672310035534-7f48cfb23164?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80";
 
 const Card = ({ name, category, price, photos, sizes, id }) => {
   return (
@@ -7,11 +9,7 @@ const Card = ({ name, category, price, photos, sizes, id }) => {
         <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
           <img
             className="img-fluid w-100"
-            src={
-              photos.length === 0
-                ? "https://ir.ozone.ru/s3/multimedia-z/wc1000/6487362995.jpg"
-                : photos[0]
-            }
+            src={photos.length === 0 ? DEFAULT_PHOTO : photos[0]}
             alt=""
           />
         </div>
