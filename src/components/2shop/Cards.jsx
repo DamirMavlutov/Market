@@ -12,14 +12,12 @@ const Cards = () => {
 
   return (
     <>
-      {items.map((person) => {
-        return (
-          <Card
-            key={person.id}
-            {...person}
-          />
-        );
-      })}
+      {items.map((person) => (
+        <Card
+          key={person.id}
+          {...person}
+        />
+      ))}
     </>
   );
 };
