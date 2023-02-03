@@ -9,7 +9,7 @@ const Card = ({ name, category, price, photos, sizes, id }) => {
         <div className="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
           <img
             className="img-fluid w-100"
-            src={photos.length === 0 ? DEFAULT_PHOTO : photos[0]}
+            src={photos[0] || DEFAULT_PHOTO}
             alt=""
           />
         </div>
