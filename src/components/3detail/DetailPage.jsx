@@ -1,6 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 
 const DetailPage = () => {
+  const [data, setData] = useState([]);
+  const { id } = useParams();
+  useEffect(() => {
+    fetch(`https://63db6d43a3ac95cec5a16e6c.mockapi.io/api/v1/cloth/${id}`)
+      .then((response) => response.json())
+      .then((json) => setData(json));
+  }, [id]);
+
+  console.log(id);
+
+  console.log(data);
   return (
     <>
       <div className="container-fluid bg-secondary mb-5">
@@ -33,14 +45,14 @@ const DetailPage = () => {
                 <div className="carousel-item active">
                   <img
                     className="w-100 h-100"
-                    src="img/product-1.jpg"
+                    src={data.photos}
                     alt=""
                   />
                 </div>
                 <div className="carousel-item">
                   <img
                     className="w-100 h-100"
-                    src="img/product-2.jpg"
+                    src=""
                     alt=""
                   />
                 </div>
@@ -77,7 +89,7 @@ const DetailPage = () => {
           </div>
 
           <div className="col-lg-7 pb-5">
-            <h3 className="font-weight-semi-bold">Colorful Stylish Shirt</h3>
+            <h3 className="font-weight-semi-bold">{data.name}</h3>
             <div className="d-flex mb-3">
               <div className="text-primary mr-2">
                 <small className="fas fa-star"></small>
@@ -88,7 +100,7 @@ const DetailPage = () => {
               </div>
               <small className="pt-1">(50 Reviews)</small>
             </div>
-            <h3 className="font-weight-semi-bold mb-4">$150.00</h3>
+            <h3 className="font-weight-semi-bold mb-4">{data.price}</h3>
             <p className="mb-4">
               Volup erat ipsum diam elitr rebum et dolor. Est nonumy elitr erat
               diam stet sit clita ea. Sanc invidunt ipsum et, labore clita lorem
