@@ -24,7 +24,7 @@ const Card = ({ name, category, price, photos, sizes, id }) => {
         </div>
         <div className="card-footer d-flex justify-content-between bg-light border">
           <NavLink
-            to="/detail"
+            to={`/detail/${id}`}
             className="btn btn-sm text-dark p-0"
           >
             <i className="fas fa-eye text-primary mr-1"></i>View Detail
