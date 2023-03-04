@@ -1,6 +1,30 @@
+import { useState } from "react";
+import { commentCreate } from "../../redux/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
+import SingleComment from "./SingleComment";
 
 const ContactPage = () => {
+  const [textComment, setTextComment] = useState("");
+  const comments = useSelector((state) => {
+    console.log("redux state>>", state);
+    const { commentReduser } = state;
+    return commentReduser.comments;
+  });
+
+  const dispatch = useDispatch();
+
+  const handleInput = (e) => {
+    setTextComment(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("submit textComment >>", textComment);
+    const id = uuidv4();
+    dispatch(commentCreate(textComment, id));
+  };
   return (
     <>
       <div className="container-fluid bg-secondary mb-5">
@@ -35,6 +59,7 @@ const ContactPage = () => {
                 name="sentMessage"
                 id="contactForm"
                 novalidate="novalidate"
+                onSubmit={handleSubmit}
               >
                 <div className="control-group">
                   <input
@@ -49,26 +74,27 @@ const ContactPage = () => {
                 </div>
                 <div className="control-group">
                   <input
-                    type="email"
+                    type="text"
+                    value={textComment}
+                    onChange={handleInput}
                     className="form-control"
                     id="email"
-                    placeholder="Your Email"
+                    placeholder="Enter the comments"
                     required="required"
                     data-validation-required-message="Please enter your email"
                   />
                   <p className="help-block text-danger"></p>
                 </div>
-                <div className="control-group">
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="subject"
-                    placeholder="Subject"
-                    required="required"
-                    data-validation-required-message="Please enter a subject"
-                  />
-                  <p className="help-block text-danger"></p>
-                </div>
+                {!!comments.length &&
+                  comments.map((res) => {
+                    return (
+                      <SingleComment
+                        key={res.id}
+                        data={res}
+                      />
+                    );
+                  })}
+
                 <div className="control-group">
                   <textarea
                     className="form-control"
@@ -83,7 +109,7 @@ const ContactPage = () => {
                 <div>
                   <button
                     className="btn btn-primary py-2 px-4"
-                    type="submit"
+                    type="text"
                     id="sendMessageButton"
                   >
                     Send Message

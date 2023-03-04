@@ -1,8 +1,20 @@
 import { NavLink } from "react-router-dom";
 
+import { useDispatch, useSelector } from "react-redux";
+import { inputText } from "../../redux/actions";
 import Cards from "./Cards";
 
-const ShopPage = () => {
+const ShopPage = (props) => {
+  const dispatch = useDispatch();
+  const text = useSelector((state) => {
+    const { inputReduser } = state;
+    return inputReduser.text;
+  });
+
+  const handleChange = (e) => {
+    console.log("handleChange>>", e.target.value);
+    dispatch(inputText(e.target.value));
+  };
   return (
     <>
       <div className="container-fluid bg-secondary mb-5">
@@ -310,12 +322,16 @@ const ShopPage = () => {
                         type="text"
                         className="form-control"
                         placeholder="Search by name"
+                        onChange={handleChange}
                       />
+
                       <div className="input-group-append">
                         <span className="input-group-text bg-transparent text-primary">
                           <i className="fa fa-search"></i>
                         </span>
                       </div>
+                      <br />
+                      <p>{text}</p>
                     </div>
                   </form>
                   <div className="dropdown ml-4">

@@ -7,6 +7,7 @@ const DEFAULT_PHOTO =
 const DetailPage = () => {
   const [data, setData] = useState();
   const { id } = useParams();
+  console.log(id);
   useEffect(() => {
     fetch(`https://63db6d43a3ac95cec5a16e6c.mockapi.io/api/v1/cloth/${id}`)
       .then((response) => response.json())
