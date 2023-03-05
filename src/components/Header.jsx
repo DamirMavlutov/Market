@@ -1,5 +1,12 @@
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 const Header = () => {
+  const items = useSelector((state) => {
+    const { shopingCardReduser } = state;
+    return shopingCardReduser.items;
+  });
+
   return (
     <>
       <div className="container-fluid">
@@ -106,7 +113,7 @@ const Header = () => {
               className="btn border"
             >
               <i className="fas fa-shopping-cart text-primary"></i>
-              <span className="badge">3</span>
+              <span className="badge">{items.length}</span>
             </NavLink>
           </div>
         </div>
