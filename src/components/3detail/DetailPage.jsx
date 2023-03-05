@@ -7,13 +7,16 @@ const DEFAULT_PHOTO =
 const DetailPage = () => {
   const [data, setData] = useState();
   const { id } = useParams();
-  console.log(id);
+
   useEffect(() => {
+    if (!id) return;
     fetch(`https://63db6d43a3ac95cec5a16e6c.mockapi.io/api/v1/cloth/${id}`)
       .then((response) => response.json())
       .then((json) => setData(json));
   }, [id]);
-  console.log(data);
+
+  console.log("id", id);
+  console.log("data", data);
   return (
     <>
       <div className="container-fluid bg-secondary mb-5">

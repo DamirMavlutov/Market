@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-
 const Header = () => {
   return (
     <>
@@ -107,7 +106,7 @@ const Header = () => {
               className="btn border"
             >
               <i className="fas fa-shopping-cart text-primary"></i>
-              <span className="badge">0</span>
+              <span className="badge">3</span>
             </NavLink>
           </div>
         </div>

@@ -11,10 +11,10 @@ const Cards = () => {
 
   return (
     <>
-      {items.map((person) => (
+      {items.map((item) => (
         <Card
-          key={person.id}
-          {...person}
+          key={item.id}
+          item={item}
         />
       ))}
     </>

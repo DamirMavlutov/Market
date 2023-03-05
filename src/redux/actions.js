@@ -1,14 +1,22 @@
-export { INPUT_TEXT, COMMENT_CREATE } from "./types";
+import { INPUT_TEXT, COMMENT_CREATE, SHOPING_CARD_ADD } from "./types";
+
 export function inputText(text) {
   return {
-    type: "INPUT_TEXT",
+    type: INPUT_TEXT,
     text,
   };
 }
 
 export function commentCreate(text, id) {
   return {
-    type: "COMMENT_CREATE",
+    type: COMMENT_CREATE,
     data: { text, id },
+  };
+}
+
+export function shopingCardAdd(item) {
+  return {
+    type: SHOPING_CARD_ADD,
+    data: item,
   };
 }
