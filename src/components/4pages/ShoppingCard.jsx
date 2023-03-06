@@ -6,7 +6,9 @@ const ShoppingCard = () => {
     return shopingCardReduser.items;
   });
 
-  console.log("ShoppingCard>>", items);
+  const totalPrice = items
+    .map((p) => +p.price)
+    .reduce((partialSum, a) => partialSum + a, 0);
 
   return (
     <>
@@ -66,7 +68,7 @@ const ShoppingCard = () => {
               <div className="card-footer border-secondary bg-transparent">
                 <div className="d-flex justify-content-between mt-2">
                   <h5 className="font-weight-bold">Total</h5>
-                  <h5 className="font-weight-bold">$160</h5>
+                  <h5 className="font-weight-bold">${totalPrice}</h5>
                 </div>
                 <button className="btn btn-block btn-primary my-3 py-3">
                   Proceed To Checkout

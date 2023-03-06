@@ -12,7 +12,6 @@ const ShopPage = (props) => {
   });
 
   const handleChange = (e) => {
-    console.log("handleChange>>", e.target.value);
     dispatch(inputText(e.target.value));
   };
   return (
@@ -45,7 +44,6 @@ const ShopPage = (props) => {
                   <input
                     type="checkbox"
                     className="custom-control-input"
-                    checked
                     id="price-all"
                   />
                   <label
@@ -136,7 +134,6 @@ const ShopPage = (props) => {
                   <input
                     type="checkbox"
                     className="custom-control-input"
-                    checked
                     id="color-all"
                   />
                   <label
@@ -227,7 +224,6 @@ const ShopPage = (props) => {
                   <input
                     type="checkbox"
                     className="custom-control-input"
-                    checked
                     id="size-all"
                   />
                   <label

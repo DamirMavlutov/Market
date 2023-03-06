@@ -1,5 +1,13 @@
+import { useDispatch } from "react-redux";
+
+import { shopingCardDelete } from "../../redux/actions";
 const Purchases = ({ item }) => {
   const { name, category, price, photos, sizes, id } = item;
+  const dispatch = useDispatch();
+
+  const handleDelete = () => {
+    dispatch(shopingCardDelete(item));
+  };
 
   return (
     <>
@@ -12,7 +20,7 @@ const Purchases = ({ item }) => {
           />{" "}
           {name}
         </td>
-        <td className="align-middle">{price}</td>
+        <td className="align-middle">${price}</td>
         <td className="align-middle">
           <div
             className="input-group quantity mx-auto"
@@ -26,7 +34,6 @@ const Purchases = ({ item }) => {
             <input
               type="text"
               className="form-control form-control-sm bg-secondary text-center"
-              value="1"
             />
             <div className="input-group-btn">
               <button className="btn btn-sm btn-primary btn-plus">
@@ -35,9 +42,12 @@ const Purchases = ({ item }) => {
             </div>
           </div>
         </td>
-        <td className="align-middle">{price}</td>
+        <td className="align-middle">${price}</td>
         <td className="align-middle">
-          <button className="btn btn-sm btn-primary">
+          <button
+            className="btn btn-sm btn-primary"
+            onClick={handleDelete}
+          >
             <i className="fa fa-times"></i>
           </button>
         </td>

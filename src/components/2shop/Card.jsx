@@ -11,7 +11,6 @@ const Card = ({ item }) => {
   //console.log(">>88>>", item);
 
   const addToCard = () => {
-    console.log("item>>", item);
     dispatch(shopingCardAdd(item));
   };
 

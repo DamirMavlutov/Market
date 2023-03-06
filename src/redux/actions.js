@@ -1,4 +1,9 @@
-import { INPUT_TEXT, COMMENT_CREATE, SHOPING_CARD_ADD } from "./types";
+import {
+  INPUT_TEXT,
+  COMMENT_CREATE,
+  SHOPING_CARD_ADD,
+  SHOPING_CARD_DELETE,
+} from "./types";
 
 export function inputText(text) {
   return {
@@ -17,6 +22,13 @@ export function commentCreate(text, id) {
 export function shopingCardAdd(item) {
   return {
     type: SHOPING_CARD_ADD,
+    data: item,
+  };
+}
+
+export function shopingCardDelete(item) {
+  return {
+    type: SHOPING_CARD_DELETE,
     data: item,
   };
 }
