@@ -109,7 +109,7 @@ const Header = () => {
               <span className="badge">0</span>
             </NavLink>
             <NavLink
-              to="#"
+              to="shopcard"
               className="btn border"
             >
               <i className="fas fa-shopping-cart text-primary"></i>

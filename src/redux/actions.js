@@ -3,6 +3,7 @@ import {
   COMMENT_CREATE,
   SHOPING_CARD_ADD,
   SHOPING_CARD_DELETE,
+  PURCHASES_DELETE,
 } from "./types";
 
 export function inputText(text) {
@@ -26,9 +27,17 @@ export function shopingCardAdd(item) {
   };
 }
 
-export function shopingCardDelete(item) {
+export function shopingCardDelete(item, onlyOne = false) {
   return {
     type: SHOPING_CARD_DELETE,
+    data: item,
+    onlyOne,
+  };
+}
+
+export function purchasesDelete(item) {
+  return {
+    type: PURCHASES_DELETE,
     data: item,
   };
 }

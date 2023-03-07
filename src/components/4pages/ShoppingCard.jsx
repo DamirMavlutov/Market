@@ -6,6 +6,23 @@ const ShoppingCard = () => {
     return shopingCardReduser.items;
   });
 
+  const dublePosition = [];
+  for (let i = 0; i < items.length; i++) {
+    let found = false;
+    for (let j = 0; j < dublePosition.length; j++) {
+      if (dublePosition[j].value === items[i]) {
+        dublePosition[j].quantity++;
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      dublePosition.push({ value: items[i], quantity: 1 });
+    }
+  }
+
+  console.log("Added cards>>>", dublePosition);
+
   const totalPrice = items
     .map((p) => +p.price)
     .reduce((partialSum, a) => partialSum + a, 0);
@@ -26,10 +43,11 @@ const ShoppingCard = () => {
                 </tr>
               </thead>
               <tbody className="align-middle">
-                {items.map((item) => (
+                {dublePosition.map((group) => (
                   <Purchases
-                    key={item.id}
-                    item={item}
+                    key={group.value.id}
+                    item={group.value}
+                    quantity={group.quantity}
                   />
                 ))}
               </tbody>
