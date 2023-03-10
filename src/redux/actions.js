@@ -6,6 +6,8 @@ import {
   PURCHASES_DELETE,
   SET_DATA,
   CHENGE_MONEY,
+  FILTER_COLOR,
+  FILTER_SIZE,
 } from "./types";
 
 export function inputText(text) {
@@ -54,6 +56,20 @@ export function setData(data) {
 export function changeMoney(data) {
   return {
     type: CHENGE_MONEY,
+    payload: data,
+  };
+}
+
+export function filterColor(data) {
+  return {
+    type: FILTER_COLOR,
+    payload: data,
+  };
+}
+
+export function filterSize(data) {
+  return {
+    type: FILTER_SIZE,
     payload: data,
   };
 }

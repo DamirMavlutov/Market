@@ -1,5 +1,4 @@
-import { SET_DATA } from "./types";
-import { CHENGE_MONEY } from "./types";
+import { SET_DATA, FILTER_COLOR, CHENGE_MONEY, FILTER_SIZE } from "./types";
 
 const initialState = {
   data: [],
@@ -16,6 +15,12 @@ export const dataReduser = (state = initialState, action) => {
 
     case CHENGE_MONEY:
       return { ...state, prices: [...state.prices, action.payload] };
+
+    case FILTER_COLOR:
+      return { ...state, colors: [...state.colors, action.payload] };
+
+    case FILTER_SIZE:
+      return { ...state, sizes: [...state.sizes, action.payload] };
 
     default:
       return state;

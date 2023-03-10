@@ -5,3 +5,5 @@ export const SHOPING_CARD_DELETE = "SHOPING_CARD_DELETE";
 export const PURCHASES_DELETE = "PURCHASES_DELETE";
 export const SET_DATA = "SET_DATA";
 export const CHENGE_MONEY = "CHENGE_MONEY";
+export const FILTER_COLOR = "FILTER_COLOR";
+export const FILTER_SIZE = "FILTER_SIZE";

@@ -1,7 +1,14 @@
+import { useDispatch } from "react-redux";
+import { filterColor } from "../../redux/actions";
 const ColorItems = ({ item }) => {
+  const dispatch = useDispatch();
+  const handlerColor = () => {
+    dispatch(filterColor(item));
+  };
   return (
     <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
       <input
+        onChange={handlerColor}
         type="checkbox"
         className="custom-control-input"
         id="color-1"

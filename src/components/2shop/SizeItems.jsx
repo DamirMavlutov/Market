@@ -1,7 +1,14 @@
+import { useDispatch } from "react-redux";
+import { filterSize } from "../../redux/actions";
 const SizeItems = ({ item }) => {
+  const dispatch = useDispatch();
+  const handlerSize = () => {
+    dispatch(filterSize(item));
+  };
   return (
     <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
       <input
+        onChange={handlerSize}
         type="checkbox"
         className="custom-control-input"
         id="size-1"
