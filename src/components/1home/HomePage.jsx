@@ -1,6 +1,10 @@
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const HomePage = () => {
+  const newData = useSelector((state) => state.dataReduser);
+  //console.log("date from state", newData.data[1].name);
+  console.log("date from state2", newData);
   return (
     <>
       <div

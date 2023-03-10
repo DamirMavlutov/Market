@@ -19,7 +19,7 @@ const ShoppingCard = () => {
     if (!found) {
       dublePosition.push({ value: items[i], quantity: 1 });
     }
-  }
+  } //создаем массив с карточками с новым параметром quantity, который указывает колво этих карточек
 
   console.log("Added cards>>>", dublePosition);
 

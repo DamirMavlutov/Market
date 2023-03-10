@@ -4,6 +4,8 @@ import {
   SHOPING_CARD_ADD,
   SHOPING_CARD_DELETE,
   PURCHASES_DELETE,
+  SET_DATA,
+  CHENGE_MONEY,
 } from "./types";
 
 export function inputText(text) {
@@ -39,5 +41,19 @@ export function purchasesDelete(item) {
   return {
     type: PURCHASES_DELETE,
     data: item,
+  };
+}
+
+export function setData(data) {
+  return {
+    type: SET_DATA,
+    payload: data,
+  };
+}
+
+export function changeMoney(data) {
+  return {
+    type: CHENGE_MONEY,
+    payload: data,
   };
 }

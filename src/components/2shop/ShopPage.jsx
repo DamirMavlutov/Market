@@ -1,10 +1,10 @@
 import { NavLink } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { inputText } from "../../redux/actions";
+import { inputText, changeMoney } from "../../redux/actions";
 import Cards from "./Cards";
 
-const ShopPage = (props) => {
+const ShopPage = () => {
   const dispatch = useDispatch();
   const text = useSelector((state) => {
     const { inputReduser } = state;
@@ -14,6 +14,11 @@ const ShopPage = (props) => {
   const handleChange = (e) => {
     dispatch(inputText(e.target.value));
   };
+
+  const handlePrice = () => {
+    dispatch(changeMoney("100"));
+  };
+
   return (
     <>
       <div className="container-fluid bg-secondary mb-5">
@@ -68,7 +73,10 @@ const ShopPage = (props) => {
                   </label>
                   <span className="badge border font-weight-normal">150</span>
                 </div>
-                <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                <div
+                  onClick={handlePrice}
+                  className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3"
+                >
                   <input
                     type="checkbox"
                     className="custom-control-input"
