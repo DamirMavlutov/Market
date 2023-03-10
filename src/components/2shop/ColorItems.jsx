@@ -1,21 +1,23 @@
 import { useDispatch } from "react-redux";
 import { filterColor } from "../../redux/actions";
-const ColorItems = ({ item }) => {
+
+const ColorItems = ({ item, index }) => {
   const dispatch = useDispatch();
   const handlerColor = () => {
     dispatch(filterColor(item));
   };
+  const num = index + 1;
   return (
     <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
       <input
         onChange={handlerColor}
         type="checkbox"
         className="custom-control-input"
-        id="color-1"
+        id={`size-${num}`}
       />
       <label
         className="custom-control-label"
-        for="color-1"
+        for={`size-${num}`}
       >
         {item}
       </label>

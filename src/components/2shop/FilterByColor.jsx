@@ -19,8 +19,13 @@ const FilterByColor = () => {
           </label>
           <span className="badge border font-weight-normal">1000</span>
         </div>
-        {colors.map((item) => {
-          return <ColorItems item={item} />;
+        {colors.map((item, index) => {
+          return (
+            <ColorItems
+              item={item}
+              index={index}
+            />
+          );
         })}
       </form>
     </div>

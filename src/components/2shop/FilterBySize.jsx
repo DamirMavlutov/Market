@@ -19,8 +19,13 @@ const FilterBySize = () => {
           </label>
           <span className="badge border font-weight-normal">1000</span>
         </div>
-        {sizes.map((item) => {
-          return <SizeItems item={item} />;
+        {sizes.map((item, index) => {
+          return (
+            <SizeItems
+              item={item}
+              index={index}
+            />
+          );
         })}
       </form>
     </div>
