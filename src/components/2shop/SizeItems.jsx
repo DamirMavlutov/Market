@@ -1,7 +1,7 @@
 import { filterSize } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 
-const SizeItems = ({ item, index }) => {
+const SizeItems = ({ item }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {

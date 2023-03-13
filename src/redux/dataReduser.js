@@ -1,4 +1,10 @@
-import { SET_DATA, FILTER_COLOR, CHENGE_MONEY, FILTER_SIZE } from "./types";
+import {
+  SET_DATA,
+  FILTER_COLOR,
+  CHENGE_MONEY,
+  FILTER_SIZE,
+  FILTER_ALL_SIZES,
+} from "./types";
 
 const initialState = {
   data: [],
@@ -31,9 +37,17 @@ export const dataReduser = (state = initialState, action) => {
         ...state,
         sizes: state.sizes.map((el) => {
           if (el.id === action.payload) {
-            return { ...el, checked: !el.checked };
+            return { ...el, checked: true };
           }
           return el;
+        }),
+      };
+
+    case FILTER_ALL_SIZES:
+      return {
+        ...state,
+        sizes: state.sizes.map((el) => {
+          return { ...el, checked: !el.checked };
         }),
       };
 

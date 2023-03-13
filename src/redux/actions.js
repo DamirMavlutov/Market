@@ -8,6 +8,7 @@ import {
   CHENGE_MONEY,
   FILTER_COLOR,
   FILTER_SIZE,
+  FILTER_ALL_SIZES,
 } from "./types";
 
 export function inputText(text) {
@@ -70,6 +71,13 @@ export function filterColor(data) {
 export function filterSize(data) {
   return {
     type: FILTER_SIZE,
+    payload: data,
+  };
+}
+
+export function filterAllSizes(data) {
+  return {
+    type: FILTER_ALL_SIZES,
     payload: data,
   };
 }

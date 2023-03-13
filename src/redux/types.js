@@ -7,3 +7,4 @@ export const SET_DATA = "SET_DATA";
 export const CHENGE_MONEY = "CHENGE_MONEY";
 export const FILTER_COLOR = "FILTER_COLOR";
 export const FILTER_SIZE = "FILTER_SIZE";
+export const FILTER_ALL_SIZES = "FILTER_ALL_SIZES";
