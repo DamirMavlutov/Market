@@ -15,8 +15,6 @@ const DetailPage = () => {
       .then((json) => setData(json));
   }, [id]);
 
-  console.log("id", id);
-  console.log("data", data);
   return (
     <>
       <div className="container-fluid bg-secondary mb-5">

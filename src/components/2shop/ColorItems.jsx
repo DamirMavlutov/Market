@@ -6,18 +6,18 @@ const ColorItems = ({ item, index }) => {
   const handlerColor = () => {
     dispatch(filterColor(item));
   };
-  const num = index + 1;
+  const num2 = index + 1;
   return (
     <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
       <input
         onChange={handlerColor}
         type="checkbox"
         className="custom-control-input"
-        id={`size-${num}`}
+        id={`color-${num2}`}
       />
       <label
         className="custom-control-label"
-        for={`size-${num}`}
+        for={`color-${num2}`}
       >
         {item}
       </label>

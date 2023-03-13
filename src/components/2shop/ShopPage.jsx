@@ -21,6 +21,10 @@ const ShopPage = () => {
     dispatch(changeMoney("100"));
   };
 
+  //здесь получаем массив для тестирования
+  const newData = useSelector((state) => state.dataReduser);
+  console.log("date from state2", newData);
+
   return (
     <>
       <div className="container-fluid bg-secondary mb-5">

@@ -24,6 +24,7 @@ const FilterByColor = () => {
             <ColorItems
               item={item}
               index={index}
+              key={index}
             />
           );
         })}

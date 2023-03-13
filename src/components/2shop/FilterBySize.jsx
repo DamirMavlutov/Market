@@ -1,7 +1,10 @@
 import SizeItems from "./SizeItems";
-let sizes = ["s", "m", "l", "xl", "xxl"];
+import { useDispatch, useSelector } from "react-redux";
 
 const FilterBySize = () => {
+  //const isAll = // if all isCheched true
+
+  const sizes = useSelector((state) => state.dataReduser.sizes);
   return (
     <div>
       <form>
@@ -24,6 +27,7 @@ const FilterBySize = () => {
             <SizeItems
               item={item}
               index={index}
+              key={index}
             />
           );
         })}
