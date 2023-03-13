@@ -15,7 +15,7 @@ const FilterBySize = () => {
       <form>
         <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
           <input
-            checked={sizes[0].checked}
+            //checked={sizes[0].checked}
             onClick={handleAllSize}
             type="checkbox"
             className="custom-control-input"
