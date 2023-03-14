@@ -9,6 +9,7 @@ import {
   FILTER_COLOR,
   FILTER_SIZE,
   FILTER_ALL_SIZES,
+  FILTER_ALL_COLORS,
 } from "./types";
 
 export function inputText(text) {
@@ -78,6 +79,13 @@ export function filterSize(data) {
 export function filterAllSizes(data) {
   return {
     type: FILTER_ALL_SIZES,
+    payload: data,
+  };
+}
+
+export function filterAllColors(data) {
+  return {
+    type: FILTER_ALL_COLORS,
     payload: data,
   };
 }

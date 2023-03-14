@@ -4,6 +4,7 @@ import {
   CHENGE_MONEY,
   FILTER_SIZE,
   FILTER_ALL_SIZES,
+  FILTER_ALL_COLORS,
 } from "./types";
 
 const initialState = {
@@ -17,7 +18,14 @@ const initialState = {
     { id: 5, name: "xxl", checked: false },
     { id: 6, name: "xxxl", checked: false },
   ],
-  colors: [],
+  colors: [
+    { id: 1, name: "black", checked: false },
+    { id: 2, name: "white", checked: false },
+    { id: 3, name: "red", checked: false },
+    { id: 4, name: "blue", checked: false },
+    { id: 5, name: "green", checked: false },
+    { id: 6, name: "yellow", checked: false },
+  ],
   prices: [],
 };
 
@@ -30,7 +38,15 @@ export const dataReduser = (state = initialState, action) => {
       return { ...state, prices: [...state.prices, action.payload] };
 
     case FILTER_COLOR:
-      return { ...state, colors: [...state.colors, action.payload] };
+      return {
+        ...state,
+        colors: state.colors.map((el) => {
+          if (el.id === action.payload) {
+            return { ...el, checked: !el.checked };
+          }
+          return el;
+        }),
+      };
 
     case FILTER_SIZE:
       return {
@@ -47,6 +63,14 @@ export const dataReduser = (state = initialState, action) => {
       return {
         ...state,
         sizes: state.sizes.map((el) => {
+          return { ...el, checked: action.payload };
+        }),
+      };
+
+    case FILTER_ALL_COLORS:
+      return {
+        ...state,
+        colors: state.colors.map((el) => {
           return { ...el, checked: action.payload };
         }),
       };

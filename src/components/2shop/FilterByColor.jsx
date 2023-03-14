@@ -1,30 +1,41 @@
 import ColorItems from "./ColorItems";
+import { useDispatch, useSelector } from "react-redux";
+import { filterAllColors } from "../../redux/actions";
 
-let colors = ["black", "white", "blue", "red", "green"];
 const FilterByColor = () => {
+  const dispatch = useDispatch();
+  const colors = useSelector((state) => state.dataReduser.colors);
+
+  const handleAllColor = (e) => {
+    dispatch(filterAllColors(e.target.checked));
+  };
+  let isAll = colors.every((el) => el.checked === true);
+
   return (
     <div>
       <form>
         <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
           <input
+            checked={isAll}
+            onChange={handleAllColor}
             type="checkbox"
             className="custom-control-input"
             id="color-all"
           />
+
           <label
             className="custom-control-label"
-            for="price-all"
+            for="color-all"
           >
             All Color
           </label>
           <span className="badge border font-weight-normal">1000</span>
         </div>
-        {colors.map((item, index) => {
+        {colors.map((item) => {
           return (
             <ColorItems
               item={item}
-              index={index}
-              key={index}
+              key={item.id}
             />
           );
         })}
