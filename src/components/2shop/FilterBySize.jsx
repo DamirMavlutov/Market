@@ -6,17 +6,19 @@ const FilterBySize = () => {
   const dispatch = useDispatch();
   const sizes = useSelector((state) => state.dataReduser.sizes);
 
-  const handleAllSize = () => {
-    dispatch(filterAllSizes(sizes));
+  const handleAllSize = (e) => {
+    dispatch(filterAllSizes(e.target.checked));
   };
+
+  let isAll = sizes.every((el) => el.checked === true);
 
   return (
     <div>
       <form>
         <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
           <input
-            //checked={sizes[0].checked}
-            onClick={handleAllSize}
+            checked={isAll}
+            onChange={handleAllSize}
             type="checkbox"
             className="custom-control-input"
             id="size-all"

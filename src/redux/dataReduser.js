@@ -47,7 +47,7 @@ export const dataReduser = (state = initialState, action) => {
       return {
         ...state,
         sizes: state.sizes.map((el) => {
-          return { ...el, checked: true };
+          return { ...el, checked: action.payload };
         }),
       };
 
