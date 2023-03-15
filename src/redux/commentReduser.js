@@ -3,8 +3,6 @@ const initialState = {
   comments: [],
 };
 export const commentReduser = (state = initialState, action) => {
-  console.log("comments Reduser >>", action);
-
   switch (action.type) {
     case COMMENT_CREATE:
       return {

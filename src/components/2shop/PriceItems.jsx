@@ -13,11 +13,11 @@ const PriceItems = ({ item }) => {
         onChange={handlePrice}
         type="checkbox"
         className="custom-control-input"
-        id={`color-${item.id}`}
+        id={`price-${item.id}`}
       />
       <label
         className="custom-control-label"
-        for={`color-${item.id}`}
+        for={`price-${item.id}`}
       >
         ${item.from} - ${item.to}
       </label>

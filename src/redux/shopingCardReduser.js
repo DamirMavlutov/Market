@@ -7,8 +7,6 @@ const initialState = {
   items: [],
 };
 export const shopingCardReduser = (state = initialState, action) => {
-  console.log("shopingCardReduser >>>>", action);
-
   switch (action.type) {
     case SHOPING_CARD_ADD:
       return {

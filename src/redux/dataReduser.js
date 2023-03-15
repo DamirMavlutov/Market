@@ -28,12 +28,12 @@ const initialState = {
     { id: 6, name: "yellow", checked: false },
   ],
   prices: [
-    { id: 1, from: "0", to: "100", checked: false },
-    { id: 2, from: "101", to: "200", checked: false },
-    { id: 3, from: "201", to: "300", checked: false },
-    { id: 4, from: "301", to: "400", checked: false },
-    { id: 5, from: "401", to: "500", checked: false },
-    { id: 6, from: "501", to: "600", checked: false },
+    { id: 1, from: 0, to: 100, checked: false },
+    { id: 2, from: 101, to: 200, checked: false },
+    { id: 3, from: 201, to: 300, checked: false },
+    { id: 4, from: 301, to: 400, checked: false },
+    { id: 5, from: 401, to: 500, checked: false },
+    { id: 6, from: 501, to: 600, checked: false },
   ],
 };
 

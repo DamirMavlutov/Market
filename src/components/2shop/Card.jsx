@@ -8,7 +8,6 @@ const DEFAULT_PHOTO =
 const Card = ({ item }) => {
   const { name, category, price, photos, sizes, id } = item;
   const dispatch = useDispatch();
-  //console.log(">>88>>", item);
 
   const addToCard = () => {
     dispatch(shopingCardAdd(item));

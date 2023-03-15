@@ -5,6 +5,15 @@ import { setData } from "../../redux/actions";
 
 const Cards = () => {
   const dispatch = useDispatch();
+  const sizes = useSelector((state) => state.dataReduser.sizes).filter(
+    (el) => el.checked === true
+  );
+  const colors = useSelector((state) => state.dataReduser.colors).filter(
+    (el) => el.checked === true
+  );
+  const prices = useSelector((state) => state.dataReduser.prices).filter(
+    (el) => el.checked === true
+  );
 
   const items = useSelector((state) => {
     const { dataReduser } = state;
@@ -16,7 +25,10 @@ const Cards = () => {
       .then((json) => dispatch(setData(json)));
   }, []);
 
-  //const filteredItems = items.filter(p => p.color....)
+  const filteredItems = [];
+
+  // есть все карточки items
+  // нужно убрать неподходящие карточки, отфильтровать исходя из sizes, colors, prices
 
   return (
     <>

@@ -1,14 +1,14 @@
 import { useDispatch } from "react-redux";
 import { filterAllPrices } from "../../redux/actions";
 
-const PriceAllItems = (item) => {
+const PriceAllItems = ({ item }) => {
   const dispatch = useDispatch();
 
   const handleAllSize = (e) => {
     dispatch(filterAllPrices(e.target.checked));
   };
 
-  let isAll = item.item.every((el) => el.checked === true);
+  let isAll = item.every((el) => el.checked === true);
 
   return (
     <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
