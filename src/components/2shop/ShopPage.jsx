@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { inputText, changeMoney } from "../../redux/actions";
+import { inputText } from "../../redux/actions";
 import Cards from "./Cards";
 import FilterByColor from "./FilterByColor";
 import FilterBySize from "./FilterBySize";
+import FilterByPrice from "./FilterByPrice";
 
 const ShopPage = () => {
   const dispatch = useDispatch();
@@ -15,10 +16,6 @@ const ShopPage = () => {
 
   const handleChange = (e) => {
     dispatch(inputText(e.target.value));
-  };
-
-  const handlePrice = () => {
-    dispatch(changeMoney("100"));
   };
 
   //здесь получаем массив для тестирования
@@ -50,95 +47,7 @@ const ShopPage = () => {
           <div className="col-lg-3 col-md-12">
             <div className="border-bottom mb-4 pb-4">
               <h5 className="font-weight-semi-bold mb-4">Filter by price</h5>
-              <form>
-                <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="price-all"
-                  />
-                  <label
-                    className="custom-control-label"
-                    for="price-all"
-                  >
-                    All Price
-                  </label>
-                  <span className="badge border font-weight-normal">1000</span>
-                </div>
-                <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="price-1"
-                  />
-                  <label
-                    className="custom-control-label"
-                    for="price-1"
-                  >
-                    $0 - $100
-                  </label>
-                  <span className="badge border font-weight-normal">150</span>
-                </div>
-                <div
-                  onClick={handlePrice}
-                  className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3"
-                >
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="price-2"
-                  />
-                  <label
-                    className="custom-control-label"
-                    for="price-2"
-                  >
-                    $100 - $200
-                  </label>
-                  <span className="badge border font-weight-normal">295</span>
-                </div>
-                <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="price-3"
-                  />
-                  <label
-                    className="custom-control-label"
-                    for="price-3"
-                  >
-                    $200 - $300
-                  </label>
-                  <span className="badge border font-weight-normal">246</span>
-                </div>
-                <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="price-4"
-                  />
-                  <label
-                    className="custom-control-label"
-                    for="price-4"
-                  >
-                    $300 - $400
-                  </label>
-                  <span className="badge border font-weight-normal">145</span>
-                </div>
-                <div className="custom-control custom-checkbox d-flex align-items-center justify-content-between">
-                  <input
-                    type="checkbox"
-                    className="custom-control-input"
-                    id="price-5"
-                  />
-                  <label
-                    className="custom-control-label"
-                    for="price-5"
-                  >
-                    $400 - $500
-                  </label>
-                  <span className="badge border font-weight-normal">168</span>
-                </div>
-              </form>
+              <FilterByPrice />
             </div>
 
             <div className="border-bottom mb-4 pb-4">

@@ -5,11 +5,12 @@ import {
   SHOPING_CARD_DELETE,
   PURCHASES_DELETE,
   SET_DATA,
-  CHENGE_MONEY,
+  FILTER_PRICE,
   FILTER_COLOR,
   FILTER_SIZE,
   FILTER_ALL_SIZES,
   FILTER_ALL_COLORS,
+  FILTER_ALL_PRICES,
 } from "./types";
 
 export function inputText(text) {
@@ -55,9 +56,9 @@ export function setData(data) {
   };
 }
 
-export function changeMoney(data) {
+export function filterPrice(data) {
   return {
-    type: CHENGE_MONEY,
+    type: FILTER_PRICE,
     payload: data,
   };
 }
@@ -86,6 +87,13 @@ export function filterAllSizes(data) {
 export function filterAllColors(data) {
   return {
     type: FILTER_ALL_COLORS,
+    payload: data,
+  };
+}
+
+export function filterAllPrices(data) {
+  return {
+    type: FILTER_ALL_PRICES,
     payload: data,
   };
 }

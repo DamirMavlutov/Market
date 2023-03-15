@@ -1,10 +1,11 @@
 import {
   SET_DATA,
+  FILTER_PRICE,
   FILTER_COLOR,
-  CHENGE_MONEY,
   FILTER_SIZE,
   FILTER_ALL_SIZES,
   FILTER_ALL_COLORS,
+  FILTER_ALL_PRICES,
 } from "./types";
 
 const initialState = {
@@ -26,7 +27,14 @@ const initialState = {
     { id: 5, name: "green", checked: false },
     { id: 6, name: "yellow", checked: false },
   ],
-  prices: [],
+  prices: [
+    { id: 1, from: "0", to: "100", checked: false },
+    { id: 2, from: "101", to: "200", checked: false },
+    { id: 3, from: "201", to: "300", checked: false },
+    { id: 4, from: "301", to: "400", checked: false },
+    { id: 5, from: "401", to: "500", checked: false },
+    { id: 6, from: "501", to: "600", checked: false },
+  ],
 };
 
 export const dataReduser = (state = initialState, action) => {
@@ -34,8 +42,16 @@ export const dataReduser = (state = initialState, action) => {
     case SET_DATA:
       return { ...state, data: action.payload };
 
-    case CHENGE_MONEY:
-      return { ...state, prices: [...state.prices, action.payload] };
+    case FILTER_PRICE:
+      return {
+        ...state,
+        prices: state.prices.map((el) => {
+          if (el.id === action.payload) {
+            return { ...el, checked: !el.checked };
+          }
+          return el;
+        }),
+      };
 
     case FILTER_COLOR:
       return {
@@ -71,6 +87,14 @@ export const dataReduser = (state = initialState, action) => {
       return {
         ...state,
         colors: state.colors.map((el) => {
+          return { ...el, checked: action.payload };
+        }),
+      };
+
+    case FILTER_ALL_PRICES:
+      return {
+        ...state,
+        prices: state.prices.map((el) => {
           return { ...el, checked: action.payload };
         }),
       };
