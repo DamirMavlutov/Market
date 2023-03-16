@@ -5,12 +5,14 @@ import { setData } from "../../redux/actions";
 
 const Cards = () => {
   const dispatch = useDispatch();
-  const sizes = useSelector((state) => state.dataReduser.sizes).filter(
-    (el) => el.checked === true
-  );
-  const colors = useSelector((state) => state.dataReduser.colors).filter(
-    (el) => el.checked === true
-  );
+  const sizes = useSelector((state) => state.dataReduser.sizes)
+    .filter((el) => el.checked === true) //фильтруем все checked:true
+    .map((el) => el.name); //делаем массив из содержимого name
+
+  const colors = useSelector((state) => state.dataReduser.colors)
+    .filter((el) => el.checked === true)
+    .map((el) => el.name);
+
   const prices = useSelector((state) => state.dataReduser.prices).filter(
     (el) => el.checked === true
   );
@@ -26,13 +28,34 @@ const Cards = () => {
   }, []);
 
   const filteredItems = [];
+  items.forEach((item) => {
+    const found = item.sizes.some((r) => sizes.includes(r)); //смотрим содержит ли item элем. sizes
+    if (found) {
+      filteredItems.push(item);
+    }
+  });
 
-  // есть все карточки items
-  // нужно убрать неподходящие карточки, отфильтровать исходя из sizes, colors, prices
+  items.forEach((item) => {
+    const found = item.colors.some((r) => colors.includes(r)); //смотрим содержит ли item элем. colors
+
+    if (found) {
+      filteredItems.push(item);
+    }
+  });
+
+  items.forEach((item) => {
+    let num = +item.price;
+    for (let i = 0; i < prices.length; i++) {
+      if (num >= prices[i].from && num <= prices[i].to) {
+        filteredItems.push(item);
+        break;
+      }
+    }
+  });
 
   return (
     <>
-      {items.map((item) => (
+      {filteredItems.map((item) => (
         <Card
           key={item.id}
           item={item}

@@ -25,7 +25,7 @@ const initialState = {
     { id: 3, name: "red", checked: false },
     { id: 4, name: "blue", checked: false },
     { id: 5, name: "green", checked: false },
-    { id: 6, name: "yellow", checked: false },
+    { id: 6, name: "grey", checked: false },
   ],
   prices: [
     { id: 1, from: 0, to: 100, checked: false },
